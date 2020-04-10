@@ -27,11 +27,6 @@ public class RabbitMqConfiguration {
     }
 
     @Bean
-    public DirectExchange exchange() {
-        return new DirectExchange(exchange);
-    }
-
-    @Bean
     public Binding binding(Queue queue, DirectExchange exchange) {
         return BindingBuilder.bind(queue).to(exchange).with(routingkey);
     }
@@ -43,7 +38,7 @@ public class RabbitMqConfiguration {
 
 
     @Bean
-    public AmqpTemplate rabbitTemplate(ConnectionFactory connectionFactory) {
+    public AmqpTemplate rabbitTmpl(ConnectionFactory connectionFactory) {
         final RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
         rabbitTemplate.setMessageConverter(jsonMessageConverter());
         return rabbitTemplate;
