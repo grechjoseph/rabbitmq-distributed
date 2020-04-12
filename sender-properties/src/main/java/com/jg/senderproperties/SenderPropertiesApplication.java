@@ -1,16 +1,16 @@
-package com.jg.receiver;
+package com.jg.senderproperties;
 
-import com.jg.receiver.config.RabbitConfig;
+import com.jg.senderproperties.config.RabbitConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 
-@SpringBootApplication
 @EnableBinding(RabbitConfig.class)
-public class ReceiverApplication {
+@SpringBootApplication
+public class SenderPropertiesApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ReceiverApplication.class, args);
+		SpringApplication.run(SenderPropertiesApplication.class, args);
 	}
 
 }
